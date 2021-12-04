@@ -3,23 +3,28 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from 'react-router-dom';
 function Header() {
     const [navbar, setStatus] = useState(false);
     return (
         <Nav>
            <LeftNav>
-                <h1>
-                    The Resturant
-                </h1>
-                <p>
-                    New Delhi
-                </p>
+                <NavLink to="/">
+                    <h1>
+                       
+                        The Resturant
+                       
+                    </h1>
+                    <p>
+                        New Delhi
+                    </p>
+                </NavLink>
            </LeftNav>
            <RightNav show = {navbar}>
-                <h3> Reservations</h3>
-                <h3> Menu</h3>
-                <h3> Contact</h3>
-                <h3> Gallery</h3>
+           <li><NavLink to="/Reservations">Reservations</NavLink></li>
+                <li><NavLink to="/Menu" onClick={() => setStatus(false)}>Menu</NavLink></li>
+                <li><NavLink to="/Gallery" onClick={() => setStatus(false)}>Gallery</NavLink></li>
+                <li><NavLink to="/Contact"onClick={() => setStatus(false)}>Contact</NavLink></li>
            </RightNav>
            <NavIcon>
            {!navbar && 
@@ -36,10 +41,23 @@ const Nav = styled.nav`
     color:#fff;
     padding:20px 0;
     width:100%;
-    
+    a{
+        text-decoration:none;
+        color:#fff;
+       
+        
+    }
+    li{
+     list-style-type:none
+     
+        
+    }
     @media(max-width:750px){
         position:fixed;
-        
+        a{
+            display:block;
+            width:100vw;
+        }
     }
     
     
@@ -62,6 +80,9 @@ const LeftNav = styled.div`
         position:relative;
         left:40px;
     }
+    a{
+        display:inline;
+    }
     
   
 `
@@ -78,6 +99,7 @@ const RightNav = styled.div`
         
     }
     @media (max-width:750px){
+        
         display:flex;
         flex-direction:column;
         justify-content:flex-start;
@@ -86,22 +108,33 @@ const RightNav = styled.div`
         // width and max- width  to change the above rules
         width:100%;
         max-width:100%;
-        text-align:left;
+       
         background-color:#1b1f24;
         height:100vh;
         transform:${props => !props.show ? "translateX(100%)" : "translateX(0)"};
         transition:transform .5s;
+    
 
 
-        h3{
+        li{
             position:relative;
             top:160px;
-            padding: 20px 40px;
+            // padding: 20px 40px;
             margin:0;
+            text-decoration:none;
+            text-align:left;
+            transition:all .3s;
+            display:block;
+            cursor:pointer;
+            
+          
         }
-        h3:hover{
+        li:hover{
             background-color: #24222b;
             color:rgba(255,255,255);
+        }
+        a{
+            padding:20px 40px;
         }
     }
 `
