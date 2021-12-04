@@ -1,26 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faGithub, faLinkedin, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
+import {  faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from 'react-router-dom';
 function Footer() {
     return (
         <Div>
             <Logo>
-                <h6>THE RESTURANT</h6>
-                <p>NEW DELHI</p>
+                <h6><NavLink to="/">THE RESTURANT</NavLink></h6>
+                <p><NavLink  to="/Contact">NEW DELHI</NavLink></p>
             </Logo>
             <MenuItems>
-                <li>Reservations</li>
-                <li>Menu</li>
-                <li>Gallery</li>
-                <li>Contact</li>
+                <li><NavLink to="/Reservations">Reservations</NavLink></li>
+                <li><NavLink to="/Menu">Menu</NavLink></li>
+                <li><NavLink to="/Gallery">Gallery</NavLink></li>
+                <li><NavLink to="/Contact">Contact</NavLink></li>
             </MenuItems>
             <Social>
                 <Github>
-                <FontAwesomeIcon icon={faGithub} size="2x"/>
+                    <a href="https://github.com/Aksharmeet">
+                        <FontAwesomeIcon icon={faGithub} size="2x"/>
+                    </a>
                 </Github>
                 <Linkedin>
-                <FontAwesomeIcon icon={faLinkedinIn}  size="2x"/>
+                    <a href="https://www.linkedin.com/in/aksharmeet-singh-9869a6175" target="_blank">
+                         <FontAwesomeIcon icon={faLinkedinIn}  size="2x"/>
+                    </a>
                 </Linkedin>
             </Social>
 
@@ -41,8 +46,11 @@ const Div = styled.div`
     color: rgba(255, 255, 255, .6);
     background-color:#202023;
     text-align:center;
-   
-    li:hover{
+    a{
+        color: rgba(255, 255, 255, .6);
+        text-decoration:none;
+    }
+    a:hover{
         color: rgba(255, 255, 255, .9);
         cursor:pointer
         }
