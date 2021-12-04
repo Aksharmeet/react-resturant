@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 function Home_Gallery() {
     return (
@@ -7,15 +8,20 @@ function Home_Gallery() {
             <Section>
                 <p>NEW DELHI</p>
                 <h6>EXPERIENCE BEAUTY</h6>
-                <Button>
+                <NavLink to="/Gallery">
+                    <Button>
                     VIEW GALLERY
-                </Button>
+                    </Button>
+                </NavLink>
             </Section>
             
         </Div>
     )
 }
 const Div = styled.div`
+    a{
+        color:#fff
+    }
   
 `
 const Section = styled.div`

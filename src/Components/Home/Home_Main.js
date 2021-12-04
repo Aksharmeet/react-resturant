@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 function Home_Main() {
     return (
@@ -6,11 +7,15 @@ function Home_Main() {
             <Main>
             <h2>THE RESTURANT</h2>
             <h4>New Delhi</h4>
-            <MakeReservation>
-                <p>Make A Reservation</p>
-            </MakeReservation>
+            <NavLink to="/Reservations">
+                <MakeReservation>
+                    <p>Make A Reservation</p>
+                </MakeReservation> 
+            </NavLink>
             <Covid19>
-                <p>Covid-19 Health & Safety Policy</p>
+               <NavLink to="Covid">
+                    <p>Covid-19 Health & Safety Policy</p>
+               </NavLink>
             </Covid19>
             </Main>
          
@@ -27,6 +32,11 @@ const Main = styled.main`
     display:flex;
     flex-direction:column;
     align-items:center;
+    text-align:center;
+    a{
+        color:#fff;
+        text-decoration:none;
+    }
     h2{
         font-size:3em;
         font-family:Cinzel;
@@ -48,7 +58,7 @@ const MakeReservation = styled.div`
     width:300px;  
     border-top:2px solid #a11212;
     border-bottom:2px solid #a11212;
-    margin:40px;
+    margin:40px auto;
     padding:20px;
     transition:background-color .5s ; 
     &:hover{
