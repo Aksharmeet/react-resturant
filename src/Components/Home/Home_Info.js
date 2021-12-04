@@ -164,13 +164,13 @@ Img.defaultProps = {
 const Image = styled.div`
     width:50%;
     display:flex;
-    margin:40px 40px 100px 0px; 
+    margin:40px 40px 40px 0px; 
     background-color:#e0e0e0;
 
     @media (max-width:880px){
         width:100%;
         padding:20px;
-        margin: 40px 40px 160px 0; 
+        margin: 40px 40px 40px 0; 
     }
     
 `
