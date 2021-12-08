@@ -21,7 +21,7 @@ function Header() {
                 </NavLink>
            </LeftNav>
            <RightNav show = {navbar}>
-           <li><NavLink to="/Reservations">Reservations</NavLink></li>
+           <li><NavLink to="/Reservations" onClick={() => setStatus(false)}>Reservations</NavLink></li>
                 <li><NavLink to="/Menu" onClick={() => setStatus(false)}>Menu</NavLink></li>
                 <li><NavLink to="/Gallery" onClick={() => setStatus(false)}>Gallery</NavLink></li>
                 <li><NavLink to="/Contact"onClick={() => setStatus(false)}>Contact</NavLink></li>
