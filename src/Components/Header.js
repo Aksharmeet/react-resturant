@@ -36,6 +36,7 @@ function Header() {
 }
 const Nav = styled.nav`
     position:absolute;
+    z-index:100;
     display:flex;
     align-items:baseline;
     color:#fff;
@@ -53,7 +54,8 @@ const Nav = styled.nav`
         
     }
     @media(max-width:750px){
-        position:fixed;
+        
+        
         a{
             display:block;
             width:100vw;

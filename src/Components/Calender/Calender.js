@@ -1,10 +1,11 @@
 
 import React, { useState } from 'react';
 import LuxonUtils from '@date-io/luxon';
+
 import {
   DatePicker, MuiPickersUtilsProvider,
 } from '@material-ui/pickers'
-
+let so;
 
 function Calender() {
     function addDays(date, number) {
@@ -16,14 +17,15 @@ function Calender() {
        
     
     <MuiPickersUtilsProvider utils={LuxonUtils}>
-      <DatePicker minDate={new Date()} maxDate={addDays(new Date(), 45)}  value={selectedDate} onChange={handleDateChange} />
+      <DatePicker onChange={(e) => so = handleDateChange(e.event.value)} minDate={new Date()} maxDate={addDays(new Date(), 45)}  value={selectedDate} onChange={handleDateChange} />
     
-      
     </MuiPickersUtilsProvider>
+   
     )
 
        
    
 }
+
 
 export default Calender;

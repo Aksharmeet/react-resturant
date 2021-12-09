@@ -3,11 +3,29 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import Calender from '../Components/Calender/Calender';
 import { useState } from 'react';
+import { normalizeUnits } from 'moment';
+
 
 function Reservations() {
    
    const [state, setstate] = useState(true);
-    const 
+   const [select1, setSelect1] = useState('');
+   const [select2, setSelect2] = useState('');
+   const [count, setCount] = useState(0)
+   let error = "";
+   const retry = () =>{
+        if(select1 == ''){
+           error = "error: please select number of guests";
+            return false;
+        } 
+        if(select2 == ''){
+            error = "error: please select your of prefrred time";
+            return false;
+        } 
+        return true;
+        
+
+   }
     return (
        <Div>
            <Width>
@@ -19,12 +37,14 @@ function Reservations() {
     
         <Main>
             <P>
-            <Find state={state}>1. Find a Table</Find>
+            <Find state={state} onClick={() => setstate(true)}>1. Find a Table</Find>
             <Details state={state}>2.Your Details</Details>
             </P>
         <FindATable state ={state}>
+            <p>We don't take reservation for more than 45-Days prior.</p>
             <Options>
-            <select id="select1">
+            <select  onChange ={(e) => setSelect1(e.target.value)} value={select1} >
+                <option value=""   disabled hidden>No. of People</option>
                 <option value="1">1 people</option>
                 <option value="2">2 people</option>  
                 <option value="3">3 people</option>
@@ -46,12 +66,12 @@ function Reservations() {
                 <option value="19">19 people</option> 
                 <option value="20">20 people</option>
             </select>
-            
-            
+           
             <Cal>
-               <Calender/>
+               <Calender selectedDate = {Calender.selectedDate}/>
             </Cal>
-            <select>
+            <select onChange ={(e) => setSelect2(e.target.value !== null ? e.target.value : "5:00PM")} value={select2}>
+            <option value=""   disabled hidden>Time</option>
                 <option value="5:00PM">5:00PM</option>
                 <option value="5:30PM">5:30PM</option>
                 <option value="6:00PM">6:00PM</option>
@@ -66,9 +86,14 @@ function Reservations() {
                 <option value="10:30PM">10:30PM</option>
                 <option value="11:00PM">11:00PM</option>
             </select>
+          
+         
            </Options>
-       
-        <Button onClick ={console.log(document.getElementById("select1").value)} onClick={() => setstate(false)}>Find A Table</Button>
+        
+        <Button  onClick={retry() ? () => setstate(false) : () =>   setCount(1)}>Find A Table</Button>
+        {(count == 1) ? <Error> <p>{error}</p ></Error> 
+        : <Error></Error>}
+        
         </FindATable>
         <YourDetails state={state}>
             <Form>
@@ -79,18 +104,32 @@ function Reservations() {
                 
                 <input type="tel" placeholder="Phone Number" id="name" required></input>
                 <input type="email" placeholder="Email" id="name" required></input>
-                <select>
-                    <option value='' disabled selected>Select an Occasion (optional)</option>
+                <select defaultValue= "Select an Occasion (optional)">
+                <option value="Birthday">None</option>
                     <option value="Birthday">Birthday</option>
                     <option value="Anniversery">Anniversery</option>
                     <option value="Date">Date</option>
                     <option value="BusinessMeal">Business Meal</option>
                 </select>
-                <input type="submit" value="Make Reservation"></input>
+                <input className="button" type="submit" value="Make Reservation" onClick={console.log('g')}></input>
             </Form>
-            <Details>
+            <YDetails >
+               
+            <h6>Number of Guest:</h6><p>{select1}</p>
+            <h6></h6><p>{select2}</p>
+            <div></div>
+            <h6>What to know before you go</h6>
+            <p>mportant dining information
+            We have a 15 minute grace period. Please call us if you are running later than 15 minutes after your reservation time.
 
-            </Details>
+            We may contact you about this reservation, so please ensure your email and phone number are up to date.
+
+            Your table will be reserved for 2 hours.</p>
+
+            <p>
+                
+            </p>
+            </YDetails>
         </YourDetails>
         </Main>
         </Width>
@@ -99,7 +138,14 @@ function Reservations() {
       
     )
 }
+const Error = styled.div`
+    position:absolute;
+    bottom:150px;
+    left:5px;
+    color:#ad1111;
 
+    
+`
 const Div= styled.div`
     background: linear-gradient(to bottom,#23074d, #cc5333); 
     padding-bottom:80px;
@@ -109,32 +155,30 @@ const Div= styled.div`
     
 `
 const Width = styled.div`
-    max-width:800px;
+    width:700px;  
+    // 730px media queries
+   
     
 `
 const Info = styled.div`
    
-    padding:200px 50px 100px 50px;
+    padding:150px 50px 0px 50px;
     font-family:lato;
     word-spacing:3px;
     letter-spacing:1px;
     color:#fffc;
-    text-align:center;
-h1{
-    font-family:cinzel;
-    font-weight:400;
-   
-}
-p{
-    line-height:1.7rem;
-    margin:40px auto 0px auto;
-    font-size:.9rem;
-    max-width:700px;
-}
+    text-align:;
+    h1{
+        font-family:cinzel;
+        font-weight:400;
+    
+    }
+
 `
 const Find = styled.p`
 
     color:${props => props.state ? '#ad1111' : '#000' };
+    cursor:pointer;
 `
 const Details = styled.p`
     color:${props => !props.state ? '#ad1111' : '#000' };
@@ -156,23 +200,32 @@ const Main = styled.div`
 `
 const P = styled.div
 `   
-background-color:#fff;
-    margin-top:100px;
+    background-color:#fff;
+    margin-top:20px;
     padding:30px 0px 10px 20px;
-    font-weight:500;
     display:flex;
     justify-content:;
-    font-family:cinzel;
+    font-family:Lustria;
+    font-weight:700;
     border-bottom:1.5px solid #e4e3e3;
+    font-size:1.1rem;
     
-
-  
 `
 const FindATable = styled.div`
     background-color:#fff;
-    transition: transform .3s;
     transform : ${props => props.state ? 'translateX(0)' : 'translateX(-100vw)'};
     position:${props => props.state ? '' : 'absolute'};
+    
+    p{  
+        text-align:left;
+       padding-top:30px; 
+       margin-bottom:-20px;
+       margin-left:20px;
+       font-family:monospace;
+       letter-spacing:-1px;
+       word-spacing:-2px;
+       font-size:1rem
+    }
 
 `
 const Options = styled.div`
@@ -204,6 +257,13 @@ const Options = styled.div`
        
 
     }
+    select{
+        :focus{
+           border:1px solid #ad1111;
+        }
+        
+    }
+
 
    
      @media(max-width:627px){
@@ -227,7 +287,16 @@ const Button = styled.button`
     cursor:pointer;
     font-family:lato;
     font-size:1rem;
-    margin:0 auto 40px auto;
+    margin:25px auto 40px auto;
+    transition:all .3s; 
+        box-shadow:0px 2px 5px  #000000;
+        &:hover{
+            background-color:#9d1111;
+            
+        }
+        &:active{
+            box-shadow:0px 0px 0px #888888;
+        }
 
  
 `
@@ -243,33 +312,56 @@ const Cal = styled.div`
     }
     
 `
+
 const YourDetails = styled.div`
 transform: ${props => props.state ? "translateX(100vw)" : "translateX(0)"};
 background-color:white;
-padding:20px
+padding:20px;
+display:flex;
+justify-conent:space-between;
+align-items:top;
+
 `
 const Form = styled.div`
     display:flex;
     flex-direction:column;
     align-items:left;
-   
+    margin:0;
     input,select{
+        font-family:lato;
+        font-size:1rem;
+        height:50px;
         cursor:pointer;
         margin:20px 0;
-        width:50%;
-        height:40px;
+        width:300px;
         padding-left:5px;
         border-radius:5px;
         border:1px solid #000;
+        
     }
+    
     input[type=submit]{
+        
         padding-left:0;
         width:100%;
         background-color:#ad1111;
         color:#fff;
         border-style:none;
+        transition:all .3s; 
+        box-shadow:0px 2px 5px  #000000;
+        &:hover{
+            background-color:#9d1111;
+            
+        }
+        &:active{
+            box-shadow:0px 0px 0px #888888;
+        }
+
       
     }
+`
+const YDetails = styled.div`
+    margin-top:20px;
 `
 
 
