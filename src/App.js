@@ -5,7 +5,7 @@ import Footer from './Components/Footer';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Home from "./Components/Home/Home";
-import Reservations from './pages/Reservations';
+import Reservations from './pages/Reservations/Reservations';
 import Covid19 from './pages/Covid19';
 import Menu from "./pages/Menu";
 import Gallery from './pages/Gallery';

@@ -35,13 +35,14 @@ function Header() {
     )
 }
 const Nav = styled.nav`
-    position:absolute;
-    z-index:100;
+    position:fixed;
     display:flex;
+    justify-content:space-between;
     align-items:baseline;
     color:#fff;
     padding:20px 0;
     width:100%;
+    z-index:1;
     a{
         text-decoration:none;
         color:#fff;
@@ -70,10 +71,11 @@ const Nav = styled.nav`
    
 `
 const LeftNav = styled.div`
-    width:40%;
+    display:inline;
     text-align:left;
+    margin: 0 40px;
     @media (max-width:750px){
-        width:100%;
+       
         margin: 0 40px;
         z-index:1;
     }
@@ -94,6 +96,7 @@ const RightNav = styled.div`
     justify-content: space-between;
     width:40%;
     max-width:300px;
+    margin: 0 40px;
     
     h3{
         font-weight:400;
