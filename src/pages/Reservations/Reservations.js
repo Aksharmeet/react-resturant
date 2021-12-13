@@ -20,7 +20,8 @@ import {
     Error,
     YourDetails,
     Form,
-    YDetails, } from './styling/Booking';
+    YDetails,
+    E } from './styling/Booking';
 import {Reserved,
         Success} from './styling/Reserved';
 
@@ -220,16 +221,16 @@ function Reservations() {
                         <Form state ={state} onSubmit={handleSubmit}>
                         
                             <input type="text" placeholder="First Name" value = {user.fName} name="fName" onChange={handleInputs}></input>
-                            {<p>{userErrors.fName}</p>}
+                            {<E>{userErrors.fName}</E>}
                         
                             <input type="text" placeholder="Last Name" value = {user.lName} name="lName" onChange={handleInputs}></input>
-                            {<p>{userErrors.lName}</p>}
+                            {<E>{userErrors.lName}</E>}
                             
                             
                             <input type="tel" placeholder="Phone Number" value = {user.number} name="number" onChange={handleInputs} r></input>
-                            {<p>{userErrors.number}</p>}
+                            {<E>{userErrors.number}</E>}
                             <input type="text" placeholder="Email" value = {user.email} name="email" onChange={handleInputs}></input>
-                            {<p>{userErrors.email}</p>}
+                            {<E>{userErrors.email}</E>}
                             <select defaultValue= "Select an Occasion (optional)">
 
                                 <option value="Birthday">None</option>

@@ -1,7 +1,18 @@
 
 import styled from 'styled-components'
 
+export const E = styled.p`
+    color: #ad1111;
+    text-align:left;
+    position:relative;
+    left:10px;
+    top:-10px;
+    font-family:lato;
+    font-weight:500;
+    font-size:1rem;
+    
 
+`
 export const Booking = styled.div`
     width:700px;  
     opacity:${props => props.ReservationStatus ? "0" : ""};
