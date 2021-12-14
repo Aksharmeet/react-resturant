@@ -4,7 +4,7 @@ export const IndianMenu = [
     title: "Dal Makhani",
     category: "vegMain",
     price:425,
-    img:"/images/menuImages/butterNaan.jpeg",
+    img:"/images/menuImages/dalMakhani.jpeg",
     disc: "The Resturant's signature creamy and luscious black lentil prepared with chef special recipe"
     },
     {
@@ -12,7 +12,7 @@ export const IndianMenu = [
         title: "Kesar Malai Kofta",
         category: "vegMain",
         price: 395,
-        img: "/images/menuImages/",
+        img: "/images/menuImages/malaiKofta.jpeg",
         disc: "Cottage cheese dumplings stuffed with pine nuts cooked in fenugreek gravy"
     },
     {
@@ -20,7 +20,7 @@ export const IndianMenu = [
         title: "Pindi Chana Masala",
         category: "vegMain",
         price:425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/pindiChole.jpeg",
         disc: "White Chickpeas curry spiced with carrom, mango powder and chilli"
     },
     {
@@ -28,7 +28,7 @@ export const IndianMenu = [
         title: "Dal Tadka",
         category: "vegMain",
         price: 395,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/dalTadka.jpeg",
         disc: "The classic mix moong, masoor and toor dal with garlic and cumin tadka"
     },
     {
@@ -36,7 +36,7 @@ export const IndianMenu = [
         title: "Paneer Lababdar",
         category: "vegMain",
         price: 400,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/paneerLababdar.jpeg",
         disc: "Soft pieces of cottage cheese are Cooked In rich mughlai gravy"
     },
     {
@@ -44,7 +44,7 @@ export const IndianMenu = [
         title: "Palak Paneer",
         category: "vegMain",
         price: 425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/palakPaneer.jpeg",
         disc: "Hand Chopped Spinach and Cottage Cheese Tossed With Garlic and Onion Tomato Masala Gravy"
     },
     {
@@ -52,7 +52,7 @@ export const IndianMenu = [
         title: "Butter Chicken",
         category: "nonMain",
         price: 425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/butterChicken.jpeg",
         disc: "Classic chicken tikka cooked in buttery & creamy smooth tomato gravy"
     },
     {
@@ -60,7 +60,7 @@ export const IndianMenu = [
         title: "Murg Lababdar (Boneless)",
         category: "nonMain",
         price: 425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/murgLababdar.jpeg",
         disc: "hicken tikka Cooked In rich mughlai gravy"
     },
     {
@@ -68,15 +68,15 @@ export const IndianMenu = [
         title: "Butter Grill Chicken",
         category: "nonMain",
         price:495 ,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/grillChicken.jpeg",
         disc: "Classic tandoori chicken cooked in buttery and rustic tomato gravy"
     },
     {
         id:10 ,
         title: "Murgh Changezi",
-        category: "",
+        category: "nonMain",
         price: 495,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/chickenChangezi.jpeg",
         disc: "Spicy & fragrant chicken curry inspired from the classic Old Delhi Mughlai preparation"
     },
     {
@@ -84,7 +84,7 @@ export const IndianMenu = [
         title: "Dhaniya Mirchi Da Kukkad",
         category: "nonMain",
         price: 425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/chickenKaliMirch.jpeg",
         disc: "Chicken drumsticks cooked with coriander & chills"
     },
     {
@@ -92,7 +92,7 @@ export const IndianMenu = [
         title: "Kadhai Murgh (Boneless)",
         category: "nonMain",
         price:425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/kadaiChicken.png",
         disc: "Classic Tandoori Chicken With Capsicum, Onion & Tomato Masala Gravy"
     },
     {
@@ -100,7 +100,7 @@ export const IndianMenu = [
         title: "Tarkari Kesari Biryani",
         category: "biryani",
         price: 425,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/tarkariKesariBriyani.jpeg",
         disc: "One of the oldest medieval dishes of Delhi, fragrant basmati rice cooked in vegetable stock"
     },
     {
@@ -108,7 +108,7 @@ export const IndianMenu = [
         title: "Chicken Dum Biryani",
         category: "biryani",
         price: 495,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/chickenDumBriyani.jpeg",
         disc: "Chicken layered with fragrant basmati rice and spices served with raita"
     },
     {
@@ -116,7 +116,7 @@ export const IndianMenu = [
         title: "Gosht Dum Biryani",
         category: "biryani",
         price: 525,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/goshtDumBriyani.cms",
         disc: "Mutton layered with fragrant basmati rice and spices served with raita"
     },
     {
@@ -124,7 +124,7 @@ export const IndianMenu = [
         title: "Tandoori Roti",
         category: "breads",
         price: 69,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/tandooriRoti.jpeg",
         disc: ""
     },
     {
@@ -132,7 +132,7 @@ export const IndianMenu = [
         title: "Roomali Roit",
         category: "breads",
         price: 69,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/roomaliRoti.jpeg",
         disc: ""
     },
     {
@@ -140,7 +140,7 @@ export const IndianMenu = [
         title: "Missi Roti",
         category: "breads",
         price: 75,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/missiRoti.jpeg",
         disc: ""
     },
     {
@@ -148,7 +148,7 @@ export const IndianMenu = [
         title: "Multigrain Roti",
         category: "breads",
         price: 75,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/multigrainRoti.jpeg",
         disc: ""
     },
     {
@@ -156,7 +156,7 @@ export const IndianMenu = [
         title: "Plain Naan",
         category: "breads",
         price: 75,
-        img:"/images/menuImages/",
+        img:"images/menuImages/plainNaan.jpeg",
         disc: ""
     },
     {
@@ -164,7 +164,7 @@ export const IndianMenu = [
         title: "Butter Naan",
         category: "breads",
         price: 75,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/butterNaan.jpeg",
         disc: ""
     },
     {
@@ -172,7 +172,7 @@ export const IndianMenu = [
         title: "Kesariya Phirni",
         category: "deserts",
         price: 325,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/kesariyaPhirni.jpeg",
         disc: "Classic Indian Sweet Pudding With The Twist Of Saffron"
     },
     {
@@ -180,7 +180,7 @@ export const IndianMenu = [
         title: "Seasonal Halwa",
         category: "deserts",
         price: 325,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/seasonalHalwa.jpeg",
         disc: ""
     },
     {
@@ -188,7 +188,7 @@ export const IndianMenu = [
         title: "Rasmalai",
         category: "deserts",
         price: 325,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/rasmali.jpeg",
         disc: "Home Made Chenna ,Saffron Flavoured ,Milky & Spongy"
     },
     {
@@ -196,7 +196,7 @@ export const IndianMenu = [
         title: "Shikanji",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/shikanji.png",
         disc: ""
     },
     {
@@ -204,7 +204,7 @@ export const IndianMenu = [
         title: "Fresh Cucumber Shikanji",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/freshCucumberShikanji.jpeg",
         disc: ""
     },
     {
@@ -212,7 +212,7 @@ export const IndianMenu = [
         title: "Jaljeera",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/jaljeera.jpeg",
         disc: ""
     },
     {
@@ -220,7 +220,7 @@ export const IndianMenu = [
         title: "Fresh Mint Shikanji",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/freshMintShikanji.png",
         disc: ""
     },
     {
@@ -228,7 +228,7 @@ export const IndianMenu = [
         title: "Kesar Pista Lassi",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/kesarPista.jpeg",
         disc: ""
     },
     {
@@ -236,7 +236,7 @@ export const IndianMenu = [
         title: "Cardamom Lassi",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/",
+        img:"/images/menuImages/cardomomLassi.jpeg",
         disc: ""
     },
     
