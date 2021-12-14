@@ -7,7 +7,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Reservations from './pages/Reservations/Reservations';
 import Covid19 from './pages/Covid19';
-import Menu from "./pages/Menu";
+import Menu from "./pages/Menu/Menu";
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact'
 
