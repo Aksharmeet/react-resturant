@@ -1,3 +1,15 @@
 body {
   color: #0000007e;
 }
+#breads,
+#beverages,
+#deserts {
+  margin: 0;
+}
+@media (max-width: 900px) {
+  #breads,
+  #beverages,
+  #deserts {
+    margin: 0 auto;
+  }
+}

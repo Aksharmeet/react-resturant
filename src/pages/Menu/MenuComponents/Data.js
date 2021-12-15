@@ -116,7 +116,7 @@ export const IndianMenu = [
         title: "Gosht Dum Biryani",
         category: "biryani",
         price: 525,
-        img:"/images/menuImages/goshtDumBriyani.cms",
+        img:"/images/menuImages/goshtDumBriyani.jpeg",
         disc: "Mutton layered with fragrant basmati rice and spices served with raita"
     },
     {
@@ -125,7 +125,8 @@ export const IndianMenu = [
         category: "breads",
         price: 69,
         img:"/images/menuImages/tandooriRoti.jpeg",
-        disc: ""
+        disc: "Tandoori Roti made in a traditional oven, Served with butter "
+        
     },
     {
         id: 18,
@@ -133,7 +134,7 @@ export const IndianMenu = [
         category: "breads",
         price: 69,
         img:"/images/menuImages/roomaliRoti.jpeg",
-        disc: ""
+        disc: "Soft Roomali Roti, Served with green chutney and onions on side"
     },
     {
         id: 19,
@@ -141,7 +142,7 @@ export const IndianMenu = [
         category: "breads",
         price: 75,
         img:"/images/menuImages/missiRoti.jpeg",
-        disc: ""
+        disc: "Missi Roti, served with butter on the side"
     },
     {
         id: 20,
@@ -220,7 +221,7 @@ export const IndianMenu = [
         title: "Fresh Mint Shikanji",
         category: "beverages",
         price: 115,
-        img:"/images/menuImages/freshMintShikanji.png",
+        img:"/images/menuImages/freshMintShikanji.jpeg",
         disc: ""
     },
     {

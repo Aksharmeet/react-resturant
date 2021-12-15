@@ -33,12 +33,12 @@ function Menu() {
           
           <Categories SideMenu={SideMenu}>
                 <ul onClick ={OpenClose}>
-                <a href="#veg"><li>Curries (VEG)</li></a>
-                <a href="#nonVeg"><li>Curries(NON-VEG)</li></a>
-                <a href="#biryani"><li>Briyani</li></a>
-                <a href="#breads"><li>Breads</li></a>
-                <a href="#deserts"><li>Deserts</li></a>
-                <a href="#beverages"><li>Beverages</li></a>
+                    <li><a href="#veg">Curries (VEG)</a></li>
+                    <li> <a href="#nonVeg">Curries(NON-VEG)</a></li>
+                    <li> <a href="#biryani">Briyani</a></li>
+                    <li> <a href="#breads">Breads</a></li>
+                    <li> <a href="#deserts">Deserts</a></li>
+                    <li> <a href="#beverages">Beverages</a></li>
                 </ul>
                 <SideMenuWrapper onClick={OpenClose} onMouseOver={() => setMouseMenu(true)} onMouseOut={() =>setMouseMenu(false)}>
                     <FontAwesomeIcon icon={faUtensils} style = {MouseMenu ? {color: "#fff"}:{color:"#000"}} size="lg"/>
@@ -58,12 +58,16 @@ function Menu() {
                     <VegContainer>
                     
                     <img key={item.img} src={item.img}/>
+                    <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
+                    <button>Add To Cart</button>
+                    </Div>
                     </VegContainer>
                 )
             )}
+          
             </div>
           
          
@@ -74,9 +78,12 @@ function Menu() {
                 (  
                     <NonVegContainer>
                     <img key={item.img} src={item.img}/>
+                    <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
+                    <button>Add To Cart</button>
+                    </Div>
                     </NonVegContainer>
                     
                 )
@@ -90,9 +97,12 @@ function Menu() {
                 (  
                     <BiryaniContainer>
                     <img key={item.img} src={item.img}/>
+                    <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
+                    <button>Add To Cart</button>
+                    </Div>
                     </BiryaniContainer>
                     
                 )
@@ -106,9 +116,12 @@ function Menu() {
                 (  
                     <BreadsContainer>
                     <img key={item.img} src={item.img}/>
+                    <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
+                    <button>Add To Cart</button>
+                    </Div>
                     </BreadsContainer>
                     
                 )
@@ -122,9 +135,12 @@ function Menu() {
                 (  
                     <DesertsContainer>
                     <img key={item.img} src={item.img}/>
+                    <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
+                    <button>Add To Cart</button>
+                    </Div>
                     </DesertsContainer>
                     
                 )
@@ -140,9 +156,12 @@ function Menu() {
                 (  
                     <BeveragesContainer>
                     <img key={item.img} src={item.img}/>
+                    <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
+                    <button>Add To Cart</button>
+                    </Div>
                     </BeveragesContainer>
                     
                 )
@@ -163,25 +182,28 @@ const MenuBody = styled.div`
     padding-top:100px;
    
         h4{
-            padding-top:30px;
-            margin:0px auto 30px auto;
-            text-align:center;
+            padding:30px 0 10px 0;
+            border-bottom: 1px solid #ffffff80;
+            margin:20px auto 60px 80px;
+            text-align:left;
             font-family:cinzel;
             font-size:2rem;
             font-weight:200;
+            @media (max-width:900px){
+                text-align:center;
+                margin:20px auto 60px auto;
+
+            }
             
         }
         img{
-            width:35%;
+            width:100%;
             max-width:300px;
             box-shadow: 8px 8px #feaa1a;
             margin:40px 30px;
             
-        };
-        a{
-            color:#000;
-            text-decoration:none;
         }
+
        
 
     
@@ -220,11 +242,17 @@ const SideMenuWrapper = styled.div`
         background-color: #feaa1a;
         
     }
+    @media (min-width: 901px){
+        display:none;
+    }
 `
 const Categories = styled.div`
    
     padding:150px 10px 50px 10px;
-    
+    @media (max-width:900px){
+        padding:0;
+       margin:0;
+    }
     ul{
        
         list-style:none;
@@ -236,9 +264,19 @@ const Categories = styled.div`
   
     li{
         cursor:pointer;
+        padding:10px 0;
+
+      
        
     }
-    @media (max-width:720px){
+    a{
+        color:#fff;
+        text-decoration:none;
+        &:hover{
+            color:#feaa1a
+        }
+    }
+    @media (max-width:900px){
         ul{
             position:fixed;
             bottom:100px;
@@ -252,7 +290,7 @@ const Categories = styled.div`
         li{
          
             border-bottom: 1px solid #0000003e;
-            padding:10px 20px;
+            padding:0;
             transition:all .2s;
             
             &:hover{
@@ -266,6 +304,15 @@ const Categories = styled.div`
             }
            
         }
+        a{
+            color: #000;
+            padding:10px;
+            display:inline-block;
+            width:100%;
+            &:hover{
+                color:#fff
+            }
+        }
        
         
     }
@@ -274,125 +321,193 @@ const FoodWrapper = styled.div`
     height:100vh ;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    display:flex;
+    flex-direction:column;
+   
+   
+`
+const Div = styled.div`
+    font-family:cinzel;
+    padding:20px;
+    padding-left:80px;
+    text-align:center;
+   
+    h5{
+        font-size:1.5rem;
+        font-weight:200;
+    }
+    p{
+        font-family:lustra;
+        font-size:1rem;
+        letter-spacing:.1rem;
+        margin:20px auto;
+        color:#ffffffd0;
+        
+     }
+     button{
+        margin-top:20px;
+        padding:.5rem 1.5rem;
+        font-family:Cinzel;
+        color:#ffffff;
+        background-color:#feaa1a;
+        border-radius:20px;
+        border-style:none;
+        transition: all .3s;
+        font-size:.8rem;
+        &:hover{
+        color:#000;
+        background-color:#fff;
+        font-size:.9rem;
+        }
+        &:active{
+        font-size:.8rem;
+        }
+     }
+     @media (max-width:900px){
+        max-width:400px;
+        padding:30px;
+     }
+
+     
 `
 const VegContainer = styled.div`
-    div{
-        background-color:#ffffff80;
-        height:1px;
-        margin:auto 30px;
+   
+  
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row-reverse;
     
-    
-    }
-    @media (max-width:720px){
+  
+    @media (max-width:900px){
         display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
         flex-wrap:wrap;
+        width: 100%;
+      
         img{
             width:60%;
             max-width:none;
         }
+    }
 `
 
 const NonVegContainer = styled.div`
     
-    div{
-        background-color:#ffffff80;
-        height:1px;
-        margin:auto 30px;
-        
-    
-    
+   
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:row-reverse;
+
+
+@media (max-width:900px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    width: 100%;
+  
+    img{
+        width:60%;
+        max-width:none;
     }
-    @media (max-width:720px){
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        img{
-            width:60%;
-            max-width:none;
-        }
+}
 `
 
 const BreadsContainer = styled.div`
-    div{
-        background-color:#ffffff80;
-        height:1px;
-        margin:auto 30px;
     
-    
+   
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:row-reverse;
+
+
+@media (max-width:900px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    width: 100%;
+  
+    img{
+        width:60%;
+        max-width:none;
     }
-    @media (max-width:720px){
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        img{
-            width:60%;
-            max-width:none;
-        }
+}
 `
 const BiryaniContainer = styled.div`
-    div{
-        background-color:#ffffff80;
-        height:1px;
-        margin:auto 30px;
+    
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:row-reverse;
 
 
+@media (max-width:900px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    width: 100%;
+  
+    img{
+        width:60%;
+        max-width:none;
     }
-    @media (max-width:720px){
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        img{
-            width:60%;
-            max-width:none;
-        }   
+}
 `
 const DesertsContainer = styled.div` 
-    div{
-        background-color:#ffffff80;
-        height:1px;
-        margin:auto 30px;
-    
-    
+   
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:row-reverse;
+
+
+@media (max-width:900px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    width: 100%;
+  
+    img{
+        width:60%;
+        max-width:none;
     }
-    @media (max-width:720px){
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        img{
-            width:60%;
-            max-width:none;
-        }   
+}
 ` 
 
 const BeveragesContainer = styled.div`
-    div{
-        background-color:#ffffff80;
-        height:1px;
-        margin:auto 30px;
     
-    
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:row-reverse;
+
+
+@media (max-width:900px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    width: 100%;
+  
+    img{
+        width:60%;
+        max-width:500px;
+        margin:0;
     }
-    @media (max-width:720px){
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        img{
-            width:60%;
-            max-width:none;
-        }
+}
 `
 
 export default Menu
