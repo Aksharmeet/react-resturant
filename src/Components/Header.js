@@ -21,6 +21,7 @@ function Header() {
                 </NavLink>
            </LeftNav>
            <RightNav show = {navbar}>
+           <li><NavLink to="/" onClick={() => setStatus(false)}>Home</NavLink></li>
            <li><NavLink to="/Reservations" onClick={() => setStatus(false)}>Reservations</NavLink></li>
                 <li><NavLink to="/Menu" onClick={() => setStatus(false)}>Menu</NavLink></li>
                 <li><NavLink to="/Gallery" onClick={() => setStatus(false)}>Gallery</NavLink></li>
@@ -95,8 +96,9 @@ const RightNav = styled.div`
     display:flex;
     justify-content: space-between;
     width:40%;
-    max-width:300px;
+    max-width:400px;
     margin: 0 40px;
+    font-family:lato;
     
     h3{
         font-weight:400;

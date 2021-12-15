@@ -22,7 +22,7 @@ function Home_Info() {
                     <p>
                     The third location of The Resturant occupies 10,000 square feet of space on North World. The menu features Chef Aksharmeet’ signature multi-ethnic dishes including: Grilled Cheese and Chicken Tandoori, Tuna Poke Wonton Tacos, and Oven Braised Chicken Meatballs. 
                     </p>
-                    <NavLink to="/Menu>">
+                    <NavLink to="/Menu">
                         <Button>
                          <p>View Menu</p>
                         </Button>
