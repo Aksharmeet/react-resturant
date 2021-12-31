@@ -1,16 +1,17 @@
 import React from 'react'
-import { IndianMenu } from './MenuComponents/Data'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faShoppingCart, faUtensils} from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
-function Menu() {
-    let Veg = IndianMenu.filter((items) => (items.category == "vegMain"));
-    let NonVeg = IndianMenu.filter((items) => (items.category == "nonMain"));
-    let Biryani = IndianMenu.filter((items) => (items.category == "biryani"));
-    let Breads = IndianMenu.filter((items) => (items.category == "breads"));
-    let Deserts = IndianMenu.filter((items) => (items.category == "deserts"));
-    let Beverages = IndianMenu.filter((items) => (items.category == "beverages"));
+import { useState} from 'react';
+import { NavLink } from 'react-router-dom';
+
+
+function Menu(props) {
+       
+    let TotalCount = props.TotalCount;
+    let dispatch = props.dispatch;
+    let button = props.button;
+    
 
     // for color on cart on mouseover
     const [MouseMenu, setMouseMenu] = useState(false);
@@ -21,12 +22,20 @@ function Menu() {
       
         if(SideMenu === true){
             setSideMenu(false);
-            
         }else {
             setSideMenu(true);
         }
     }
     
+  
+    let Veg = button.filter((items) => (items.category == "vegMain"));
+    let NonVeg = button.filter((items) => (items.category == "nonMain"));
+    let Biryani = button.filter((items) => (items.category == "biryani"));
+    let Breads = button.filter((items) => (items.category == "breads"));
+    let Deserts = button.filter((items) => (items.category == "deserts"));
+    let Beverages = button.filter((items) => (items.category == "beverages"));
+   
+
     
     return (
         <MenuBody>
@@ -43,9 +52,10 @@ function Menu() {
                 <SideMenuWrapper onClick={OpenClose} onMouseOver={() => setMouseMenu(true)} onMouseOut={() =>setMouseMenu(false)}>
                     <FontAwesomeIcon icon={faUtensils} style = {MouseMenu ? {color: "#fff"}:{color:"#000"}} size="lg"/>
                 </SideMenuWrapper>
-                <CartWrapper onMouseOver={() => setMouse(true)} onMouseOut={() =>setMouse(false)}>
+                <NavLink to='/Order'><CartWrapper onMouseOver={() => setMouse(true)} onMouseOut={() =>setMouse(false)}>
                 <FontAwesomeIcon icon ={faShoppingCart}  style = {Mouse ? {color: "#fff"}:{color:"#000"}} size="lg" />
-                </CartWrapper>
+               
+                 </CartWrapper></NavLink>
           </Categories>
           <FoodWrapper>
         
@@ -55,14 +65,25 @@ function Menu() {
             <h4>Veg Items</h4>
             {Veg.map((item) => 
                 (
-                    <VegContainer>
+                    <VegContainer key={item.id}>
                     
-                    <img key={item.img} src={item.img}/>
-                    <Div>
+                    <img  src={item.img}/>
+                    <Div> 
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
-                    <p> &#8377; {item.price}</p>
-                    <button>Add To Cart</button>
+                    <p> &#8377;{item.price}</p>
+                    {item.add ? 
+                        <div>
+                            <div className='plusMinusContainer'>
+                                <button className="minus" onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :item.id}})}>-</button>
+                                <p className='count'>{item.orderCount}</p>
+                            
+                                <button className='plus' onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :item.id}})}>+</button>
+                            </div> 
+                            <p className='message'>{item.message}</p>
+                        </div>
+                    : 
+                        <button onClick={() =>dispatch({type: 'clicked/ADD_TO_CART', payload: {id: item.id}})}>Add To Cart</button>}
                     </Div>
                     </VegContainer>
                 )
@@ -76,13 +97,24 @@ function Menu() {
          
                 {NonVeg.map((item) => 
                 (  
-                    <NonVegContainer>
-                    <img key={item.img} src={item.img}/>
+                    <NonVegContainer key={item.id}>
+                    <img  src={item.img}/>
                     <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
-                    <p> &#8377; {item.price}</p>
-                    <button>Add To Cart</button>
+                    <p> &#8377;{item.price}</p>
+                    {item.add ? 
+                        <div>
+                            <div className='plusMinusContainer'>
+                                <button className="minus" onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :item.id}})}>-</button>
+                                <p className='count'>{item.orderCount}</p>
+                            
+                                <button className='plus' onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :item.id}})}>+</button>
+                            </div> 
+                            <p className='message'>{item.message}</p>
+                        </div>
+                    : 
+                        <button onClick={() =>dispatch({type: 'clicked/ADD_TO_CART', payload: {id: item.id}})}>Add To Cart</button>}
                     </Div>
                     </NonVegContainer>
                     
@@ -95,13 +127,24 @@ function Menu() {
          
                 {Biryani.map((item) => 
                 (  
-                    <BiryaniContainer>
+                    <BiryaniContainer key={item.id}>
                     <img key={item.img} src={item.img}/>
                     <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
-                    <p> &#8377; {item.price}</p>
-                    <button>Add To Cart</button>
+                    <p> &#8377;{item.price}</p>
+                    {item.add ? 
+                        <div>
+                            <div className='plusMinusContainer'>
+                                <button className="minus" onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :item.id}})}>-</button>
+                                <p className='count'>{item.orderCount}</p>
+                            
+                                <button className='plus' onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :item.id}})}>+</button>
+                            </div> 
+                            <p className='message'>{item.message}</p>
+                        </div>
+                    : 
+                        <button onClick={() =>dispatch({type: 'clicked/ADD_TO_CART', payload: {id: item.id}})}>Add To Cart</button>}
                     </Div>
                     </BiryaniContainer>
                     
@@ -114,13 +157,24 @@ function Menu() {
          
                 {Breads.map((item) => 
                 (  
-                    <BreadsContainer>
+                    <BreadsContainer key={item.id}>
                     <img key={item.img} src={item.img}/>
                     <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
-                    <p> &#8377; {item.price}</p>
-                    <button>Add To Cart</button>
+                    <p> &#8377;{item.price}</p>
+                    {item.add ? 
+                        <div>
+                            <div className='plusMinusContainer'>
+                                <button className="minus" onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :item.id}})}>-</button>
+                                <p className='count'>{item.orderCount}</p>
+                            
+                                <button className='plus' onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :item.id}})}>+</button>
+                            </div> 
+                            <p className='message'>{item.message}</p>
+                        </div>
+                    : 
+                        <button onClick={() =>dispatch({type: 'clicked/ADD_TO_CART', payload: {id: item.id}})}>Add To Cart</button>}
                     </Div>
                     </BreadsContainer>
                     
@@ -133,34 +187,54 @@ function Menu() {
          
                 {Deserts.map((item) => 
                 (  
-                    <DesertsContainer>
+                    <DesertsContainer key={item.id}>
                     <img key={item.img} src={item.img}/>
                     <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
-                    <p> &#8377; {item.price}</p>
-                    <button>Add To Cart</button>
+                    <p> &#8377;{item.price}</p>
+                    {item.add ? 
+                        <div >
+                            <div className='plusMinusContainer'>
+                                <button className="minus" onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :item.id}})}>-</button>
+                                <p className='count'>{item.orderCount}</p>
+                            
+                                <button className='plus' onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :item.id}})}>+</button>
+                            </div> 
+                            <p className='message'>{item.message}</p>
+                        </div>
+                    : 
+                        <button onClick={() =>dispatch({type: 'clicked/ADD_TO_CART', payload: {id: item.id}})}>Add To Cart</button>}
                     </Div>
                     </DesertsContainer>
                     
                 )
                 )}
             </div>
-        
-
           
             <div id="beverages">
                  <h4>Beverages</h4>
          
                 {Beverages.map((item) => 
                 (  
-                    <BeveragesContainer>
+                    <BeveragesContainer key={item.id}>
                     <img key={item.img} src={item.img}/>
                     <Div>
                     <h5>{item.title}</h5>
                     <p>{item.disc}</p>
                     <p> &#8377; {item.price}</p>
-                    <button>Add To Cart</button>
+                    {item.add ? 
+                        <div className='buttonUniversalContainer'>
+                            <div className='plusMinusContainer'>
+                                <button className="minus" onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :item.id}})}>-</button>
+                                <p className='count'>{item.orderCount}</p>
+                            
+                                <button className='plus' onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :item.id}})}>+</button>
+                            </div> 
+                            <p className='message'>{item.message}</p>
+                        </div>
+                    : 
+                        <button onClick={() =>dispatch({type: 'clicked/ADD_TO_CART', payload: {id: item.id}})}>Add To Cart</button>}
                     </Div>
                     </BeveragesContainer>
                     
@@ -317,6 +391,7 @@ const Categories = styled.div`
         
     }
 `
+
 const FoodWrapper = styled.div`
     height:100vh ;
     overflow-y: scroll;
@@ -326,12 +401,14 @@ const FoodWrapper = styled.div`
    
    
 `
+
 const Div = styled.div`
     font-family:cinzel;
     padding:20px;
     padding-left:80px;
     text-align:center;
-   
+    position:relative;
+    height:300px;
     h5{
         font-size:1.5rem;
         font-weight:200;
@@ -344,9 +421,10 @@ const Div = styled.div`
         color:#ffffffd0;
         
      }
+     
      button{
-        margin-top:20px;
-        padding:.5rem 1.5rem;
+        margin:10px auto;
+        padding:.5rem 1rem;
         font-family:Cinzel;
         color:#ffffff;
         background-color:#feaa1a;
@@ -357,12 +435,52 @@ const Div = styled.div`
         &:hover{
         color:#000;
         background-color:#fff;
-        font-size:.9rem;
+        font-size:1rem;
+        
         }
         &:active{
         font-size:.8rem;
+        
         }
      }
+     .plusMinusContainer{
+        display:flex;
+        margin-top:20px;
+        align-items:center;
+        width:120px;
+        position:relative;
+        p{
+            margin:0 auto;
+            width:10px;
+            padding:0;
+            font-weight:900;
+            font-family:monospace;
+            color:#ffffffaf
+        }
+
+        button
+        {
+            margin:0 auto;
+            font-family:monospace;
+            font-weight:900;
+            color:#000;
+            background-color:#ffffffaf;
+            
+            &:hover{
+                color:#fff;
+                background-color:#feaa1a;
+            
+            }
+        }
+        .minus{
+                position:absolute;
+            }
+        .plus{
+            position:absolute;
+            right:0;
+        }
+    }
+   
      @media (max-width:900px){
         max-width:400px;
         padding:30px;
@@ -377,7 +495,8 @@ const VegContainer = styled.div`
     align-items:center;
     justify-content:center;
     flex-direction:row-reverse;
-    
+
+
   
     @media (max-width:900px){
         display:flex;

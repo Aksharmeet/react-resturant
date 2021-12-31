@@ -1,3 +1,4 @@
+
 export const IndianMenu = [
     {
     id: 1,
@@ -5,7 +6,10 @@ export const IndianMenu = [
     category: "vegMain",
     price:425,
     img:"/images/menuImages/dalMakhani.jpeg",
-    disc: "The Resturant's signature creamy and luscious black lentil prepared with chef special recipe"
+    disc: "The Resturant's signature creamy and luscious black lentil prepared with chef special recipe",
+    add: false,
+    orderCount:0
+    
     },
     {
         id: 2,
@@ -13,7 +17,9 @@ export const IndianMenu = [
         category: "vegMain",
         price: 395,
         img: "/images/menuImages/malaiKofta.jpeg",
-        disc: "Cottage cheese dumplings stuffed with pine nuts cooked in fenugreek gravy"
+        disc: "Cottage cheese dumplings stuffed with pine nuts cooked in fenugreek gravy",
+        add: false,
+        orderCount:0
     },
     {
         id: 3,
@@ -21,7 +27,10 @@ export const IndianMenu = [
         category: "vegMain",
         price:425,
         img:"/images/menuImages/pindiChole.jpeg",
-        disc: "White Chickpeas curry spiced with carrom, mango powder and chilli"
+        disc: "White Chickpeas curry spiced with carrom, mango powder and chilli",
+        add: false,
+        orderCount:0
+
     },
     {
         id: 4,
@@ -29,7 +38,9 @@ export const IndianMenu = [
         category: "vegMain",
         price: 395,
         img:"/images/menuImages/dalTadka.jpeg",
-        disc: "The classic mix moong, masoor and toor dal with garlic and cumin tadka"
+        disc: "The classic mix moong, masoor and toor dal with garlic and cumin tadka",
+        add: false,
+        orderCount:0
     },
     {
         id: 5,
@@ -37,7 +48,9 @@ export const IndianMenu = [
         category: "vegMain",
         price: 400,
         img:"/images/menuImages/paneerLababdar.jpeg",
-        disc: "Soft pieces of cottage cheese are Cooked In rich mughlai gravy"
+        disc: "Soft pieces of cottage cheese are Cooked In rich mughlai gravy",
+        add: false,
+        orderCount:0
     },
     {
         id: 6,
@@ -45,7 +58,9 @@ export const IndianMenu = [
         category: "vegMain",
         price: 425,
         img:"/images/menuImages/palakPaneer.jpeg",
-        disc: "Hand Chopped Spinach and Cottage Cheese Tossed With Garlic and Onion Tomato Masala Gravy"
+        disc: "Hand Chopped Spinach and Cottage Cheese Tossed With Garlic and Onion Tomato Masala Gravy",
+        add: false,
+        orderCount:0
     },
     {
         id: 7,
@@ -53,7 +68,9 @@ export const IndianMenu = [
         category: "nonMain",
         price: 425,
         img:"/images/menuImages/butterChicken.jpeg",
-        disc: "Classic chicken tikka cooked in buttery & creamy smooth tomato gravy"
+        disc: "Classic chicken tikka cooked in buttery & creamy smooth tomato gravy",
+        add: false,
+        orderCount:0
     },
     {
         id: 8,
@@ -61,7 +78,9 @@ export const IndianMenu = [
         category: "nonMain",
         price: 425,
         img:"/images/menuImages/murgLababdar.jpeg",
-        disc: "hicken tikka Cooked In rich mughlai gravy"
+        disc: "hicken tikka Cooked In rich mughlai gravy",
+        add: false,
+        orderCount:0
     },
     {
         id: 9,
@@ -69,7 +88,9 @@ export const IndianMenu = [
         category: "nonMain",
         price:495 ,
         img:"/images/menuImages/grillChicken.jpeg",
-        disc: "Classic tandoori chicken cooked in buttery and rustic tomato gravy"
+        disc: "Classic tandoori chicken cooked in buttery and rustic tomato gravy",
+        add: false,
+        orderCount:0
     },
     {
         id:10 ,
@@ -77,7 +98,9 @@ export const IndianMenu = [
         category: "nonMain",
         price: 495,
         img:"/images/menuImages/chickenChangezi.jpeg",
-        disc: "Spicy & fragrant chicken curry inspired from the classic Old Delhi Mughlai preparation"
+        disc: "Spicy & fragrant chicken curry inspired from the classic Old Delhi Mughlai preparation",
+        add: false,
+        orderCount:0
     },
     {
         id:11 ,
@@ -85,7 +108,9 @@ export const IndianMenu = [
         category: "nonMain",
         price: 425,
         img:"/images/menuImages/chickenKaliMirch.jpeg",
-        disc: "Chicken drumsticks cooked with coriander & chills"
+        disc: "Chicken drumsticks cooked with coriander & chills",
+        add: false,
+        orderCount:0
     },
     {
         id:12 ,
@@ -93,7 +118,9 @@ export const IndianMenu = [
         category: "nonMain",
         price:425,
         img:"/images/menuImages/kadaiChicken.png",
-        disc: "Classic Tandoori Chicken With Capsicum, Onion & Tomato Masala Gravy"
+        disc: "Classic Tandoori Chicken With Capsicum, Onion & Tomato Masala Gravy",
+        add: false,
+        orderCount:0
     },
     {
         id: 13,
@@ -101,7 +128,9 @@ export const IndianMenu = [
         category: "biryani",
         price: 425,
         img:"/images/menuImages/tarkariKesariBriyani.jpeg",
-        disc: "One of the oldest medieval dishes of Delhi, fragrant basmati rice cooked in vegetable stock"
+        disc: "One of the oldest medieval dishes of Delhi, fragrant basmati rice cooked in vegetable stock",
+        add: false,
+        orderCount:0
     },
     {
         id: 14,
@@ -109,7 +138,9 @@ export const IndianMenu = [
         category: "biryani",
         price: 495,
         img:"/images/menuImages/chickenDumBriyani.jpeg",
-        disc: "Chicken layered with fragrant basmati rice and spices served with raita"
+        disc: "Chicken layered with fragrant basmati rice and spices served with raita",
+        add: false,
+        orderCount:0
     },
     {
         id: 15,
@@ -117,7 +148,9 @@ export const IndianMenu = [
         category: "biryani",
         price: 525,
         img:"/images/menuImages/goshtDumBriyani.jpeg",
-        disc: "Mutton layered with fragrant basmati rice and spices served with raita"
+        disc: "Mutton layered with fragrant basmati rice and spices served with raita",
+        add: false,
+        orderCount:0
     },
     {
         id: 17,
@@ -125,7 +158,9 @@ export const IndianMenu = [
         category: "breads",
         price: 69,
         img:"/images/menuImages/tandooriRoti.jpeg",
-        disc: "Tandoori Roti made in a traditional oven, Served with butter "
+        disc: "Tandoori Roti made in a traditional oven, Served with butter ",
+        add: false,
+        orderCount:0
         
     },
     {
@@ -134,7 +169,9 @@ export const IndianMenu = [
         category: "breads",
         price: 69,
         img:"/images/menuImages/roomaliRoti.jpeg",
-        disc: "Soft Roomali Roti, Served with green chutney and onions on side"
+        disc: "Soft Roomali Roti, Served with green chutney and onions on side",
+        add: false,
+        orderCount:0
     },
     {
         id: 19,
@@ -142,7 +179,9 @@ export const IndianMenu = [
         category: "breads",
         price: 75,
         img:"/images/menuImages/missiRoti.jpeg",
-        disc: "Missi Roti, served with butter on the side"
+        disc: "Missi Roti, served with butter on the side",
+        add: false,
+        orderCount:0
     },
     {
         id: 20,
@@ -150,7 +189,9 @@ export const IndianMenu = [
         category: "breads",
         price: 75,
         img:"/images/menuImages/multigrainRoti.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 21,
@@ -158,7 +199,9 @@ export const IndianMenu = [
         category: "breads",
         price: 75,
         img:"images/menuImages/plainNaan.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 22,
@@ -166,7 +209,9 @@ export const IndianMenu = [
         category: "breads",
         price: 75,
         img:"/images/menuImages/butterNaan.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 23,
@@ -174,7 +219,9 @@ export const IndianMenu = [
         category: "deserts",
         price: 325,
         img:"/images/menuImages/kesariyaPhirni.jpeg",
-        disc: "Classic Indian Sweet Pudding With The Twist Of Saffron"
+        disc: "Classic Indian Sweet Pudding With The Twist Of Saffron",
+        add: false,
+        orderCount:0
     },
     {
         id: 24,
@@ -182,7 +229,9 @@ export const IndianMenu = [
         category: "deserts",
         price: 325,
         img:"/images/menuImages/seasonalHalwa.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 25,
@@ -190,7 +239,9 @@ export const IndianMenu = [
         category: "deserts",
         price: 325,
         img:"/images/menuImages/rasmali.jpeg",
-        disc: "Home Made Chenna ,Saffron Flavoured ,Milky & Spongy"
+        disc: "Home Made Chenna ,Saffron Flavoured ,Milky & Spongy",
+        add: false,
+        orderCount:0
     },
     {
         id: 26,
@@ -198,7 +249,9 @@ export const IndianMenu = [
         category: "beverages",
         price: 115,
         img:"/images/menuImages/shikanji.png",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 27,
@@ -206,7 +259,9 @@ export const IndianMenu = [
         category: "beverages",
         price: 115,
         img:"/images/menuImages/freshCucumberShikanji.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 28,
@@ -214,7 +269,9 @@ export const IndianMenu = [
         category: "beverages",
         price: 115,
         img:"/images/menuImages/jaljeera.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 29,
@@ -222,7 +279,9 @@ export const IndianMenu = [
         category: "beverages",
         price: 115,
         img:"/images/menuImages/freshMintShikanji.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id: 30,
@@ -230,7 +289,9 @@ export const IndianMenu = [
         category: "beverages",
         price: 115,
         img:"/images/menuImages/kesarPista.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0
     },
     {
         id:31,
@@ -238,8 +299,11 @@ export const IndianMenu = [
         category: "beverages",
         price: 115,
         img:"/images/menuImages/cardomomLassi.jpeg",
-        disc: ""
+        disc: "",
+        add: false,
+        orderCount:0,
+        
     },
-    
+  
     
 ]
