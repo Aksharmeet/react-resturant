@@ -22,16 +22,16 @@ function Order(props) {
             {foodAdded.map((items) =>
 
             <CartItems key={items.id}>
-                <div>
+                <InnerCart>
                 <p>{items.title}</p>
-                <p><span className='ruppee'>&#8377;</span>{items.price}</p>
-                <div className='qauntity'>
+                <p className='price'><span className='ruppee'>&#8377;</span>{items.price}</p>
+                <Quantity>
                 <button onClick={() => dispatch({type: 'decrement/COUNT_ORDER', payload: {id :items.id}})}>-</button>
                 <p>{items.orderCount}</p>
                 <button onClick={() => dispatch({type: 'increment/COUNT_ORDER', payload: {id :items.id}})}>+</button>
-                </div>
+                </Quantity>
                 <p className='total'>{items.orderCount * items.price }</p>
-                </div>
+                </InnerCart>
                 <div className="hr"/>
             </CartItems>
            
@@ -59,20 +59,15 @@ const Main =styled.div`
     margin-bottom:10px;
    }
     p{
-        margin:0;
-        display:block;
-        width:35%;
+        
         font-size:1.5rem;
         font-weight:600;
-        margin:20px auto 10px auto;
+        margin:20px 0 10px 0;
   }
  
 `
 const CartItems = styled.div`
-  div{
-    display:flex;
-   
-  }
+ 
   
   .hr{
     margin:3px auto;
@@ -93,35 +88,57 @@ const CartItems = styled.div`
   
   p{
         margin:0;
-        display:block;
-        width:30%;
         font-size:1rem;
         font-weight:500;
-        margin:8px auto;
+       
   }
 
-  button
-  {
-      font-family:monospace;
-      font-weight:900;
-      color:#000;
-      background-color:#ffffffaf;
-      width:30px;
-      height:27px;
-      border-radius:100px;
-      border-style:none;
-
-     
-      &:hover{
-          color:#fff;
-          background-color:#feaa1a;
-      
-      }
+ 
     
   }
 `
+const InnerCart = styled.div`
+    display:flex;
+    justify-content:space-between;
+    div{
+        display:flex;
+        position:relative;
+        text-align:center;
+        align-items:center;
+        margin:0;
+
+    }
+    p{
+      width:150px;
+    }
+    
+`
+const Quantity  =styled.div`
+    width:80px;
+    button
+    {
+          font-family:monospace;
+          font-weight:900;
+          color:#000;
+          background-color:#ffffffaf;
+          width:80px;
+          height:20px;
+          border-radius:100px;
+          border-style:none;
+         
+       
+        &:hover{
+            color:#fff;
+            background-color:#feaa1a;
+        
+        }
+`
 const Titles = styled.div`
     display:flex;
+    justify-content:space-between;
+    p{
+        width:100px;
+    }
     .total{
         text-align:right;
     }
