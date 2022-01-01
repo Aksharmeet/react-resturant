@@ -1,22 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import {ReactComponent as EmptyCart} from '../../svgs/empty_cart 1svg.svg'
+import { NavLink } from 'react-router-dom'
 function Order(props) {
     
     const button = props.button
    const foodAdded = button.filter(data => data.orderCount > 0);
    const dispatch =props.dispatch;
-  console.log(foodAdded);
+   let TotalAmount;
+    function CalculateTotal() {
+        const TotalArray =foodAdded.map(items => {
+            const total = items.orderCount * items.price
+            return total;
+          })
+       
+        if(TotalArray.length >= 1){
+             TotalAmount = TotalArray.reduce((prevItems, currentItems) => prevItems + currentItems );
+            return TotalAmount;
+        }
+       
+    }
+   CalculateTotal()
   
     return (
         <Main>
+         { TotalAmount &&
+          <MainCart>
             <h1>Cart:</h1>
             <div className="hr"/>
             <Titles>
                 <p>Name</p>
                 <p>Price</p>
                 <p>Quantity</p>
-                <p className='total'>Total</p>
+                <p className='total'>Amount</p>
             </Titles>
             <div className="hr1"/>
             {foodAdded.map((items) =>
@@ -36,7 +52,40 @@ function Order(props) {
             </CartItems>
            
              )}
+             <Total_GoBack>
+                <TotalAmounte>
+                    <p>Total:</p>
+                    <p>{TotalAmount}</p>
+                </TotalAmounte>
+                <NavLink to="/Menu">
+                        <GoBack>
+                        <div>&larr;</div>
+                        <p>Menu</p>
+                        </GoBack>
+                </NavLink>
+            </Total_GoBack>
+           
+            </MainCart>
+            }
+            {!TotalAmount &&
+             <MainEmpty>
+                 <div className='emptyCart'>
+                     <h1>Cart is Empty</h1>
+                 </div>
+                 <Svg>
+                 <EmptyCart/>
+                 </Svg>
+                 <NavLink to="/Menu">
+                     <EmptyCart_GoBack>
+                        <GoBack>
+                        <div>&larr;</div>
+                        <p>Menu</p>
+                        </GoBack>
+                    </EmptyCart_GoBack>
+                </NavLink>
+             </MainEmpty>
             
+             }
         </Main>
     )
 }
@@ -44,6 +93,11 @@ const Main =styled.div`
     font-family:lato;
     padding:100px 40px;
     color:#000000af;
+  
+    
+ 
+`
+const MainCart = styled.div`
     .hr{
         height:2px;
         background:#000000;
@@ -53,18 +107,17 @@ const Main =styled.div`
         background:#0000002f;
         margin:3px auto;
     }
-   h1{
+    h1{
     font-size:2rem;
     font-weight:600;
     margin-bottom:10px;
-   }
+    }
     p{
         
         font-size:1.5rem;
         font-weight:600;
         margin:20px 0 10px 0;
-  }
- 
+    }
 `
 const CartItems = styled.div`
  
@@ -125,6 +178,7 @@ const Quantity  =styled.div`
           height:20px;
           border-radius:100px;
           border-style:none;
+          cursor:pointer;
          
        
         &:hover{
@@ -143,4 +197,55 @@ const Titles = styled.div`
         text-align:right;
     }
 `
+const Total_GoBack = styled.div`
+    position:relative;
+   
+`
+const TotalAmounte = styled.div`
+    display:flex;
+    justify-content:right;
+    align-items:center; 
+    gap:5px;
+`
+const EmptyCart_GoBack = styled.div`
+    position:relative;
+`
+const GoBack = styled.div`
+   display:flex;
+   align-items:baseline;
+   width:65px;
+   margin:0;
+   position:absolute;
+   top:0;
+   p{
+    color:#000;
+    text-decoration:none;
+    font-size:1rem;
+    transition:font-size .2s ;
+    :hover{
+        font-size:1.06rem;
+    }
+}
+   
+`
+
+const MainEmpty = styled.div` 
+    .emptyCart{
+        display:block;
+        margin:50px auto 500px auto;
+        text-align:center;
+    }
+
+`
+const Svg = styled.div`
+    display:flex;
+    justify-content:center;
+    width:50%;
+    max-width:400px;
+    position:absolute;
+    bottom:0px;
+    left:0;
+    right:0;
+`
+
 export default Order

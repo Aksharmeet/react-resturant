@@ -12,7 +12,7 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact'
 import Order from './pages/Menu/Order';
 // import hooks
-import { useState,useReducer,useEffect} from 'react'
+import {useReducer} from 'react'
 // importing menu Data
 import { IndianMenu } from './pages/Menu/MenuComponents/Data'
 
@@ -75,14 +75,6 @@ function App() {
     const [button, dispatch] =  useReducer(reducer,IndianMenu)
 
    
-//   useEffect(() => {
-//     dispatch({type: 'data/LOCAL_STORAGE'})
-//   }, []);
-
-  
-//   useEffect(() => {
-//     window.localStorage.setItem('button', JSON.stringify(button))
-//   }, [button]);
 
 
   return (

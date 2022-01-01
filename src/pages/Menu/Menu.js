@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 function Menu(props) {
        
-    let TotalCount = props.TotalCount;
+   
     let dispatch = props.dispatch;
     let button = props.button;
     
