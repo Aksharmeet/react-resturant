@@ -26,7 +26,7 @@ const Div = styled.div`
 `
 const Section = styled.div`
     font-family:Cinzel;
-    background-image:linear-gradient(to bottom, #0f20279d, #203a434d, #2c5364), url(/images/gallery.jpg);
+    background-image:linear-gradient(to bottom, #0f20279d, #203a434d, #2c5364), url(/images/gallery.webp);
     background-size:100%;
     background-repeat:no-repeat;
     background-position:bottom;

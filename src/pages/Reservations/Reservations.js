@@ -286,7 +286,7 @@ function Reservations() {
 }
 
 const Div= styled.div`
-    background: url(./images/Reservation-bg.jpg);
+    background: url(./images/Reservation-bg.webp);
     background-size:cover;
     padding-bottom:80px;
   

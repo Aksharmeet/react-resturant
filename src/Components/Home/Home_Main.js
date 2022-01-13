@@ -25,7 +25,7 @@ function Home_Main() {
 const Main = styled.main`
     padding-top: 30vh;
     height:100vh;
-    background-image: linear-gradient(to bottom, #33333392, #0012189d), url(/images/Home_main.jpg);
+    background-image: linear-gradient(to bottom, #33333392, #0012189d), url(/images/Home_main.webp);
     background-size:cover;
     color:#fff;
     font-family:Lato;

@@ -54,7 +54,7 @@ const Section = styled.section`
    
 `
 const Contact =styled.div`
-    background-image:url("images/divider.png");
+    background-image:url("images/divider.webp");
     background-size:20%;
     background-repeat:no-repeat;
     background-position: bottom;
