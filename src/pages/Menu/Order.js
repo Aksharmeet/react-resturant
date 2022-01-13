@@ -59,7 +59,7 @@ function Order(props) {
                 </TotalAmounte>
                 <NavLink to="/Menu">
                         <GoBack>
-                        <div>&larr;</div>
+                        <div className='arrow'>&larr;</div>
                         <p>Menu</p>
                         </GoBack>
                 </NavLink>
@@ -94,7 +94,10 @@ const Main =styled.div`
     padding:100px 40px;
     color:#000000af;
   
-    
+    a{
+        text-decoration:none;
+        color:#000;
+     }
  
 `
 const MainCart = styled.div`
@@ -215,15 +218,19 @@ const GoBack = styled.div`
    align-items:baseline;
    width:65px;
    margin:0;
-   position:absolute;
-   top:0;
+   transition:transform .2s ;
    p{
     color:#000;
-    text-decoration:none;
     font-size:1rem;
-    transition:font-size .2s ;
+    
+    }
     :hover{
-        font-size:1.06rem;
+        transform:translateX(-4px);
+    }
+
+    .arrow{
+      width:100%:
+     
     }
 }
    
